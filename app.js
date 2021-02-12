@@ -120,11 +120,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
-  //eslint-disable-line
-}
+  let Multection = 1 ;
+  let newsString= '';
+  
+    for(let i=0;i<multArr.length;i++)
+    {
+      Multection=multiply(multArr[i],Multection)[0]
+      newsString=sum(newsString,multArr[i])[0]
+        if(i<multArr.length-1){
+          newsString=sum(newsString,',')[0]
+    }
+  }
+    newsString='The numbers '+newsString+' have a product of '+Multection+'.'
+     
+      return [Multection,newsString];
+  }
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
