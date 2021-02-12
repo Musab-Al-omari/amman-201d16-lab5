@@ -85,20 +85,22 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4];
 
 function sumArray(sumArr) {
-  let total = 0;
-  let totalStr = '';
-  for (let i = 0; i < sumArr.length; i++) {
-    total = sum(total, sumArr[i])[0];
-    if(sumArr[i] == sumArr[sumArr.length - 1 ]){
-      totalStr = totalStr + sumArr[i];
-    }
-    else {
-      totalStr = totalStr + sumArr[i] + ',';
-    }
+let collection = 0 ;
+let newString= '';
+
+  for(let i=0;i<sumArr.length;i++)
+  {
+    collection=sum(sumArr[i],collection)[0]
+    newString=sum(newString,sumArr[i])[0]
+      if(i<sumArr.length-1){
+        newString=sum(newString,',')[0]
   }
-  totalStr = totalStr + ' was passed in as an array of numbers, and ' + total + ' is their sum.'
-  return [total, totalStr]
 }
+  newString=newString+' was passed in as an array of numbers, and '+collection+' is their sum.'
+  //  console.log(collection,newString)
+    return [collection,newString];
+}
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
